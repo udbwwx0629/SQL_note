@@ -58,14 +58,14 @@ SHOW DATABASES;
 -- 2、打开指定的库*
 USE myemployees;
 
---  3、查看当前库的所有表
+-- 3、查看当前库的所有表
 SHOW TABLES;
 
---  4、查看其他库(指定mysql)的所有表
+-- 4、查看其他库(指定mysql)的所有表
 SHOW TABLES FROM mysql;
 
 /*
---  5、在myemployees数据库中创建stuinfo表
+-- 5、在myemployees数据库中创建stuinfo表
 	create table 表名 (
 		列名 列类型,
 		列名 列类型
