@@ -1,5 +1,4 @@
 -- 1.查询员工的姓名和部门号和年薪，按年薪降序 按姓名升序
-
 select last_name,department_id,salary*12*(1+IFNULL(commission_pct,0)) 年薪
 from employees
 order by 年薪 desc,last_name asc;
