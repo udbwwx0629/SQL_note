@@ -1,56 +1,56 @@
--- where»òhavingºóÃæ
+-- whereæˆ–havingåé¢
 /*
-1¡¢±êÁ¿×Ó²éÑ¯£¨µ¥ĞĞ×Ó²éÑ¯£©
-2¡¢ÁĞ×Ó²éÑ¯  £¨¶àĞĞ×Ó²éÑ¯£©
-3¡¢ĞĞ×Ó²éÑ¯  £¨¶àĞĞ¶àÁĞ£©
-ÌØµã£º
-a.×Ó²éÑ¯·ÅÔÚĞ¡À¨ºÅÄÚ
-b.×Ó²éÑ¯Ò»°ã·ÅÔÚÌõ¼şµÄÓÒ²à
-c.±êÁ¿×Ó²éÑ¯,Ò»°ã´îÅä×Å¶àĞĞ²Ù×÷·ûÊ¹ÓÃ
+1ã€æ ‡é‡å­æŸ¥è¯¢ï¼ˆå•è¡Œå­æŸ¥è¯¢ï¼‰
+2ã€åˆ—å­æŸ¥è¯¢  ï¼ˆå¤šè¡Œå­æŸ¥è¯¢ï¼‰
+3ã€è¡Œå­æŸ¥è¯¢  ï¼ˆå¤šè¡Œå¤šåˆ—ï¼‰
+ç‰¹ç‚¹ï¼š
+a.å­æŸ¥è¯¢æ”¾åœ¨å°æ‹¬å·å†…
+b.å­æŸ¥è¯¢ä¸€èˆ¬æ”¾åœ¨æ¡ä»¶çš„å³ä¾§
+c.æ ‡é‡å­æŸ¥è¯¢,ä¸€èˆ¬æ­é…ç€å¤šè¡Œæ“ä½œç¬¦ä½¿ç”¨
 > < >= <= = <>
-ÁĞ×Ó²éÑ¯,Ò»°ã´îÅä×Å¶àĞĞ²Ù×÷·ûÊ¹ÓÃ
+åˆ—å­æŸ¥è¯¢,ä¸€èˆ¬æ­é…ç€å¤šè¡Œæ“ä½œç¬¦ä½¿ç”¨
 IN,ANY/SOME,ALL
-d.×Ó²éÑ¯µÄÖ´ĞĞÓÅÏÈÓÚÖ÷²éÑ¯Ö´ĞĞ,Ö÷²éÑ¯µÄÌõ¼şÓÃµ½ÁË×Ó²éÑ¯½á¹û
+d.å­æŸ¥è¯¢çš„æ‰§è¡Œä¼˜å…ˆäºä¸»æŸ¥è¯¢æ‰§è¡Œ,ä¸»æŸ¥è¯¢çš„æ¡ä»¶ç”¨åˆ°äº†å­æŸ¥è¯¢ç»“æœ
 */
--- Ò» ±êÁ¿×Ó²éÑ¯
+-- ä¸€ æ ‡é‡å­æŸ¥è¯¢
 
--- °¸Àı1.Ë­µÄ¹¤×Ê±Èabel¸ß?
--- 1.²éÑ¯abelµÄ¹¤×Ê
+-- æ¡ˆä¾‹1.è°çš„å·¥èµ„æ¯”abelé«˜?
+-- 1.æŸ¥è¯¢abelçš„å·¥èµ„
 select salary from employees where last_name= 'Abel';
--- 2.²éÑ¯Ô±¹¤ĞÅÏ¢,ÒªÇósalary±È1¸ß
+-- 2.æŸ¥è¯¢å‘˜å·¥ä¿¡æ¯,è¦æ±‚salaryæ¯”1é«˜
 select * from employees where salary >( select salary from employees where last_name ='Abel');
 
--- °¸Àı2.·µ»Øjob_idÓë141Ô±¹¤ÏàÍ¬,salary±È143ºÅÔ±¹¤¶àµÄÔ±¹¤ĞÕÃû,job_idºÍ¹¤×Ê
--- 1.²éÑ¯141ºÅµÄÔ±¹¤job_id
+-- æ¡ˆä¾‹2.è¿”å›job_idä¸141å‘˜å·¥ç›¸åŒ,salaryæ¯”143å·å‘˜å·¥å¤šçš„å‘˜å·¥å§“å,job_idå’Œå·¥èµ„
+-- 1.æŸ¥è¯¢141å·çš„å‘˜å·¥job_id
 select job_id
 from employees
 where employee_id=141;
--- 2.²éÑ¯143ºÅµÄÔ±¹¤salary
+-- 2.æŸ¥è¯¢143å·çš„å‘˜å·¥salary
 select salary
 from employees
 where employee_id =143;
--- 3.²éÑ¯Ô±¹¤ĞÕÃû,job_idºÍ¹¤×Ê,ÒªÇó141Ô±¹¤µÄjob_idÏàÍ¬²¢ÇÒ salary±È143ºÅ¶à
+-- 3.æŸ¥è¯¢å‘˜å·¥å§“å,job_idå’Œå·¥èµ„,è¦æ±‚141å‘˜å·¥çš„job_idç›¸åŒå¹¶ä¸” salaryæ¯”143å·å¤š
 select last_name,job_id,salary
 from employees
 where job_id =(select job_id from employees where employee_id=141)
 and salary >(select salary from employees where employee_id =143);
 
--- °¸Àı3:·µ»Ø¹«Ë¾¹¤×Ê×îÉÙµÄÔ±¹¤µÄlast_name,job_idºÍsalary
--- 1.²éÑ¯×îÉÙµÄ¹¤×Ê
+-- æ¡ˆä¾‹3:è¿”å›å…¬å¸å·¥èµ„æœ€å°‘çš„å‘˜å·¥çš„last_name,job_idå’Œsalary
+-- 1.æŸ¥è¯¢æœ€å°‘çš„å·¥èµ„
 select min(salary) from employees;
--- 2.²éÑ¯last_name,job_id,salary,ÒªÇósalary<1½á¹û
+-- 2.æŸ¥è¯¢last_name,job_id,salary,è¦æ±‚salary<1ç»“æœ
 select last_name,job_id,salary from employees where salary=(select min(salary) from employees);
 
--- °¸Àı4:²éÑ¯×îµÍ¹¤×Ê´óÓÚ50ºÅ²¿ÃÅ×îµÍ¹¤×ÊµÄ²¿ÃÅidºÍÆäËû×îµÍ¹¤×Ê
--- 1.²éÑ¯50ºÅ²¿ÃÅµÄ×îµÍ¹¤×Ê
+-- æ¡ˆä¾‹4:æŸ¥è¯¢æœ€ä½å·¥èµ„å¤§äº50å·éƒ¨é—¨æœ€ä½å·¥èµ„çš„éƒ¨é—¨idå’Œå…¶ä»–æœ€ä½å·¥èµ„
+-- 1.æŸ¥è¯¢50å·éƒ¨é—¨çš„æœ€ä½å·¥èµ„
 select min(salary) from employees where department_id =50;
--- 2.²éÑ¯Ã¿¸ö²¿ÃÅµÄ×îµÍ¹¤×Ê
+-- 2.æŸ¥è¯¢æ¯ä¸ªéƒ¨é—¨çš„æœ€ä½å·¥èµ„
 select min(salary),department_id from employees group by department_id;
--- 3.ÔÚ2»ù´¡ÉÏÉ¸Ñ¡,Âú×ãmin(salary)>1µÄ½á¹û
+-- 3.åœ¨2åŸºç¡€ä¸Šç­›é€‰,æ»¡è¶³min(salary)>1çš„ç»“æœ
 select min(salary),department_id from employees group by department_id having min(salary)>(select min(salary) from employees where department_id = 50);
 
--- ·Ç·¨Ê¹ÓÃ±êÁ¿×Ó×Ó²éÑ¯
--- a.×Ó²éÑ¯ÖĞÊ¹ÓÃsalary,³öÏÖÁĞ×Ó²éÑ¯,µ¼ÖÂ±¨´í
+-- éæ³•ä½¿ç”¨æ ‡é‡å­å­æŸ¥è¯¢
+-- a.å­æŸ¥è¯¢ä¸­ä½¿ç”¨salary,å‡ºç°åˆ—å­æŸ¥è¯¢,å¯¼è‡´æŠ¥é”™
 select min(salary),department_id from employees group by department_id having min(salary)>(select salary from employees where department_id = 50);
--- b.×Ó²éÑ¯ÖĞÊ¹ÓÃid=250µÄ»°,³öÏÖ²éÑ¯Îª¿Õ,Ôò²»³ö´í, µ«Ã»ÓĞÊµ¼ÊÒâÒå,ÔòÊÓÎª·Ç·¨²éÑ¯
+-- b.å­æŸ¥è¯¢ä¸­ä½¿ç”¨id=250çš„è¯,å‡ºç°æŸ¥è¯¢ä¸ºç©º,åˆ™ä¸å‡ºé”™, ä½†æ²¡æœ‰å®é™…æ„ä¹‰,åˆ™è§†ä¸ºéæ³•æŸ¥è¯¢
 select min(salary),department_id from employees group by department_id having min(salary)>(select min(salary) from employees where department_id = 250);

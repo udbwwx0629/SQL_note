@@ -1,4 +1,4 @@
--- 1.ifº¯Êý£º if else µÄÐ§¹û
+-- 1.ifå‡½æ•°ï¼š if else çš„æ•ˆæžœ
 
--- °¸Àý:SELECT IF(10<5,'´ó','Ð¡');
-select last_name,commission_pct,IF(commission_pct IS NULL,'Ã»½±½ð£¬ºÇºÇ','ÓÐ½±½ð£¬ÎûÎû') ±¸×¢ FROM employees;
+-- æ¡ˆä¾‹:SELECT IF(10<5,'å¤§','å°');
+select last_name,commission_pct,IF(commission_pct IS NULL,'æ²¡å¥–é‡‘ï¼Œå‘µå‘µ','æœ‰å¥–é‡‘ï¼Œå˜»å˜»') å¤‡æ³¨ FROM employees;

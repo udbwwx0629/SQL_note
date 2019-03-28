@@ -1,10 +1,10 @@
--- 1¡¢¼òµ¥ µÄÊ¹ÓÃ
+-- 1ã€ç®€å• çš„ä½¿ç”¨
 select sum(salary) from employees;
 select avg(salary) from employees;
 select min(salary) from employees;
 select max(salary) from employees;
 select count(salary) from employees;
 
-select sum(salary) ºÍ,avg(salary) Æ½¾ù,max(salary) ×î¸ß,min(salary) ×îµÍ,count(salary) ¸öÊı from employees;
+select sum(salary) å’Œ,avg(salary) å¹³å‡,max(salary) æœ€é«˜,min(salary) æœ€ä½,count(salary) ä¸ªæ•° from employees;
 
-select sum(salary) ºÍ,round(avg(salary),2) Æ½¾ù,max(salary) ×î¸ß,min(salary) ×îµÍ,count(salary) ¸öÊı from employees;
+select sum(salary) å’Œ,round(avg(salary),2) å¹³å‡,max(salary) æœ€é«˜,min(salary) æœ€ä½,count(salary) ä¸ªæ•° from employees;

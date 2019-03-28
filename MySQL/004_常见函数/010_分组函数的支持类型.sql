@@ -1,4 +1,4 @@
--- 2¡¢²ÎÊıÖ§³ÖÄÄĞ©ÀàĞÍ
+-- 2ã€å‚æ•°æ”¯æŒå“ªäº›ç±»å‹
 select sum(last_name) ,avg(last_name) from employees;
 select sum(hiredate) ,avg(hiredate) from employees;
 

@@ -1,23 +1,23 @@
 /*
-2.ĞŞ¸Ä¶à±íµÄ¼ÇÂ¼¡¾²¹³ä¡¿
-Óï·¨£º
-sql92Óï·¨£º
-update ±í1 ±ğÃû,±í2 ±ğÃû
-set ÁĞ=Öµ,....
-where Á¬½ÓÌõ¼ş
-and É¸Ñ¡Ìõ¼ş;
+2.ä¿®æ”¹å¤šè¡¨çš„è®°å½•ã€è¡¥å……ã€‘
+è¯­æ³•ï¼š
+sql92è¯­æ³•ï¼š
+update è¡¨1 åˆ«å,è¡¨2 åˆ«å
+set åˆ—=å€¼,....
+where è¿æ¥æ¡ä»¶
+and ç­›é€‰æ¡ä»¶;
 
-sql99Óï·¨£º
-update ±í1 ±ğÃû
-inner | left | right | join ±í2 ±ğÃû
-on Á¬½ÓÌõ¼ş
-set ÁĞ=Öµ,......
-where É¸Ñ¡Ìõ¼ş
+sql99è¯­æ³•ï¼š
+update è¡¨1 åˆ«å
+inner | left | right | join è¡¨2 åˆ«å
+on è¿æ¥æ¡ä»¶
+set åˆ—=å€¼,......
+where ç­›é€‰æ¡ä»¶
 */
 
--- 2.ĞŞ¸Ä¶à±íµÄ¼ÇÂ¼
--- °¸Àı1£ºĞŞ¸ÄÕÅÎŞ¼ÉµÄÅ®ÊÖ»úºÅÎª114
-update boys bo INNER JOIN beauty b ON bo.id=b.boyfriend_id SET b.phone ='114' where bo.boyName='ÕÅÎŞ¼É';
+-- 2.ä¿®æ”¹å¤šè¡¨çš„è®°å½•
+-- æ¡ˆä¾‹1ï¼šä¿®æ”¹å¼ æ— å¿Œçš„å¥³æ‰‹æœºå·ä¸º114
+update boys bo INNER JOIN beauty b ON bo.id=b.boyfriend_id SET b.phone ='114' where bo.boyName='å¼ æ— å¿Œ';
 
--- °¸Àı2£ºĞŞ¸ÄÃ»ÓĞÄĞÅóÓÑµÄÅ®ÉñµÄÄĞÅóÓÑ±àºÅ¶¼Îª2ºÅ
+-- æ¡ˆä¾‹2ï¼šä¿®æ”¹æ²¡æœ‰ç”·æœ‹å‹çš„å¥³ç¥çš„ç”·æœ‹å‹ç¼–å·éƒ½ä¸º2å·
 update boys bo RIGHT JOIN beauty b ON bo.id =b.boyfriend_id SET b.boyfriend_id =2 where bo.id is null;

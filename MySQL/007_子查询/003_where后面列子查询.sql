@@ -1,17 +1,17 @@
--- ÁĞ×Ó²éÑ¯(¶àĞĞ×Ó²éÑ¯)
--- °¸Àı1:·µ»Ølocation_idÊÇ1400»ò1700µÄ²¿ÃÅÖĞµÄËùÓĞÔ±¹¤ĞÕÃû
--- 1.²éÑ¯location_idÊÇ1400»ò1700µÄ²¿ÃÅ±àºÅ
+-- åˆ—å­æŸ¥è¯¢(å¤šè¡Œå­æŸ¥è¯¢)
+-- æ¡ˆä¾‹1:è¿”å›location_idæ˜¯1400æˆ–1700çš„éƒ¨é—¨ä¸­çš„æ‰€æœ‰å‘˜å·¥å§“å
+-- 1.æŸ¥è¯¢location_idæ˜¯1400æˆ–1700çš„éƒ¨é—¨ç¼–å·
 select distinct department_id
 from departments
 where location_id in(1400,1700);
--- 2.²éÑ¯Ô±¹¤ĞÕÃû,ÒªÇó²¿ÃÅºÅÊÇ-- 1ÁĞ±íÖĞµÄÄ³Ò»¸ö
+-- 2.æŸ¥è¯¢å‘˜å·¥å§“å,è¦æ±‚éƒ¨é—¨å·æ˜¯-- 1åˆ—è¡¨ä¸­çš„æŸä¸€ä¸ª
 select last_name
 from employees
 where department_id in(
                    select distinct department_id
                    from departments
                    where location_id in(1400,1700));
--- »ò
+-- æˆ–
 select last_name
 from employees
 where department_id = any(
@@ -26,7 +26,7 @@ where department_id not in(
                    select department_id
                    from departments
                    where location_id in(1400,1700));
--- »ò
+-- æˆ–
 select last_name
 from employees
 where department_id <> all (
@@ -34,12 +34,12 @@ where department_id <> all (
                    from departments
                    where location_id in(1400,1700));
 
--- °¸Àı2:·µ»ØÆäËü¹¤ÖÖÖĞ±Èjob_idÎª'IT_PROG'¹¤ÖÖÈÎÒ»¹¤×ÊµÍµÄÔ±¹¤µÄÔ±¹¤ºÅ, ĞÕÃû,job_idÒÔ¼°salary
--- 1.²éÑ¯job_idÎªIT_PROG²¿ÃÅÈÎÒ»¹¤×Ê
+-- æ¡ˆä¾‹2:è¿”å›å…¶å®ƒå·¥ç§ä¸­æ¯”job_idä¸º'IT_PROG'å·¥ç§ä»»ä¸€å·¥èµ„ä½çš„å‘˜å·¥çš„å‘˜å·¥å·, å§“å,job_idä»¥åŠsalary
+-- 1.æŸ¥è¯¢job_idä¸ºIT_PROGéƒ¨é—¨ä»»ä¸€å·¥èµ„
 select distinct salary
 from employees
 where job_id='IT_PROG';
--- 2.²éÑ¯Ô±¹¤ºÅ,ĞÕÃû,job_idÒÔ¼°salary,salary<-- 1µÄÈÎÒâÒ»¸ö
+-- 2.æŸ¥è¯¢å‘˜å·¥å·,å§“å,job_idä»¥åŠsalary,salary<-- 1çš„ä»»æ„ä¸€ä¸ª
 select last_name,employee_id,job_id,salary
 from employees
 where salary < any (
@@ -47,16 +47,16 @@ where salary < any (
                from employees
                where job_id='IT_PROG')
 and job_id <>'IT_PROG';
--- »ò
+-- æˆ–
 select last_name,employee_id,job_id,salary from employees where salary < (
  select max(salary) from employees where job_id ='IT_PROG'
 ) and job_id <> 'IT_PROG';
 
--- °¸Àı3:·µ»ØÆäËü²¿ÃÅÖĞ±Èjob_idÎª'IT_PROG'¹¤ÖÖËùÓĞ¹¤×Ê¶¼µÍµÄÔ±¹¤µÄÔ±¹¤ºÅ,ĞÕÃû,job_idÒÔ¼°salary
+-- æ¡ˆä¾‹3:è¿”å›å…¶å®ƒéƒ¨é—¨ä¸­æ¯”job_idä¸º'IT_PROG'å·¥ç§æ‰€æœ‰å·¥èµ„éƒ½ä½çš„å‘˜å·¥çš„å‘˜å·¥å·,å§“å,job_idä»¥åŠsalary
 select last_name,employee_id,job_id,salary from employees where salary<all(
  select distinct salary from employees where job_id='IT_PROG'
 ) and job_id <> 'IT_PROG';
--- »ò
+-- æˆ–
 select last_name,employee_id,job_id,salary from employees where salary <(
  select min(salary) from employees where job_id='IT_PROG'
 ) and job_id<>'IT_PROG';

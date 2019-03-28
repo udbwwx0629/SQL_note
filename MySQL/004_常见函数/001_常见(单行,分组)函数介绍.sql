@@ -1,20 +1,20 @@
 /*
-¸ÅÄî£ºÀàËÆÓÚjavaµÄ·½·¨£¬½«Ò»×éÂß¼­Óï¾ä·â×°ÔÚ·½·¨ÌåÖÐ£¬¶ÔÍâ±©Â¶·½·¨Ãû
-ºÃ´¦£º1¡¢Òþ²ØÁËÊµÏÖÏ¸½Ú  2¡¢Ìá¸ß´úÂëµÄÖØÓÃÐÔ
-µ÷ÓÃ£ºselect º¯ÊýÃû(Êµ²ÎÁÐ±í) ¡¾from ±í¡¿;
-ÌØµã£º
-	¢Ù½ÐÊ²Ã´£¨º¯ÊýÃû£©
-	¢Ú¸ÉÊ²Ã´£¨º¯Êý¹¦ÄÜ£©
-·ÖÀà£º
-	1¡¢µ¥ÐÐº¯Êý
-	Èç concat¡¢length¡¢ifnullµÈ
-	2¡¢·Ö×éº¯Êý
-	¹¦ÄÜ£º×öÍ³¼ÆÊ¹ÓÃ£¬ÓÖ³ÆÎªÍ³¼Æº¯Êý¡¢¾ÛºÏº¯Êý¡¢×éº¯Êý
+æ¦‚å¿µï¼šç±»ä¼¼äºŽjavaçš„æ–¹æ³•ï¼Œå°†ä¸€ç»„é€»è¾‘è¯­å¥å°è£…åœ¨æ–¹æ³•ä½“ä¸­ï¼Œå¯¹å¤–æš´éœ²æ–¹æ³•å
+å¥½å¤„ï¼š1ã€éšè—äº†å®žçŽ°ç»†èŠ‚  2ã€æé«˜ä»£ç çš„é‡ç”¨æ€§
+è°ƒç”¨ï¼šselect å‡½æ•°å(å®žå‚åˆ—è¡¨) ã€from è¡¨ã€‘;
+ç‰¹ç‚¹ï¼š
+	â‘ å«ä»€ä¹ˆï¼ˆå‡½æ•°åï¼‰
+	â‘¡å¹²ä»€ä¹ˆï¼ˆå‡½æ•°åŠŸèƒ½ï¼‰
+åˆ†ç±»ï¼š
+	1ã€å•è¡Œå‡½æ•°
+	å¦‚ concatã€lengthã€ifnullç­‰
+	2ã€åˆ†ç»„å‡½æ•°
+	åŠŸèƒ½ï¼šåšç»Ÿè®¡ä½¿ç”¨ï¼Œåˆç§°ä¸ºç»Ÿè®¡å‡½æ•°ã€èšåˆå‡½æ•°ã€ç»„å‡½æ•°
 
-³£¼ûº¯Êý:
-Ò»¡¢µ¥ÐÐº¯Êý
- ×Ö·ûº¯Êý£º
- length:»ñÈ¡×Ö½Ú¸öÊý(utf-8Ò»¸öºº×Ö´ú±í3¸ö×Ö½Ú,gbkÎª2¸ö×Ö½Ú)
+å¸¸è§å‡½æ•°:
+ä¸€ã€å•è¡Œå‡½æ•°
+ å­—ç¬¦å‡½æ•°ï¼š
+ length:èŽ·å–å­—èŠ‚ä¸ªæ•°(utf-8ä¸€ä¸ªæ±‰å­—ä»£è¡¨3ä¸ªå­—èŠ‚,gbkä¸º2ä¸ªå­—èŠ‚)
  concat
  substr
  instr
@@ -24,13 +24,13 @@
  lpad
  rpad
  replace
- ÊýÑ§º¯Êý£º
+ æ•°å­¦å‡½æ•°ï¼š
  round
  ceil
  floor
  truncate
  mod
- ÈÕÆÚº¯Êý£º
+ æ—¥æœŸå‡½æ•°ï¼š
  now
  curdate
  curtime
@@ -43,28 +43,28 @@
  second
  str_to_date
  date_format
- ÆäËûº¯Êý£º
+ å…¶ä»–å‡½æ•°ï¼š
  version
  database
  user
- ¿ØÖÆº¯Êý:
+ æŽ§åˆ¶å‡½æ•°:
  if
  case
 */
 
--- ¶þ¡¢·Ö×éº¯Êý
+-- äºŒã€åˆ†ç»„å‡½æ•°
 /*
-¹¦ÄÜ£ºÓÃ×÷Í³¼ÆÊ¹ÓÃ£¬ÓÖ³ÆÎª¾ÛºÏº¯Êý»òÍ³¼Æº¯Êý»ò×éº¯Êý
-·ÖÀà£º
-sum ÇóºÍ¡¢avg Æ½¾ùÖµ¡¢max ×î´óÖµ ¡¢min ×îÐ¡Öµ ¡¢count ¼ÆËã¸öÊý
-ÌØµã£º
-1¡¢sum¡¢avgÒ»°ãÓÃÓÚ´¦ÀíÊýÖµÐÍ
-                max¡¢min¡¢count¿ÉÒÔ´¦ÀíÈÎºÎÀàÐÍ
-2¡¢ÒÔÉÏ·Ö×éº¯Êý¶¼ºöÂÔnullÖµ
-3¡¢¿ÉÒÔºÍdistinct´îÅäÊµÏÖÈ¥ÖØµÄÔËËã
-4¡¢countº¯ÊýµÄµ¥¶À½éÉÜ
-      Ò»°ãÊ¹ÓÃcount(*)ÓÃ×÷Í³¼ÆÐÐÊý
-5¡¢ºÍ·Ö×éº¯ÊýÒ»Í¬²éÑ¯µÄ×Ö¶ÎÒªÇóÊÇgroup byºóµÄ×Ö¶Î
+åŠŸèƒ½ï¼šç”¨ä½œç»Ÿè®¡ä½¿ç”¨ï¼Œåˆç§°ä¸ºèšåˆå‡½æ•°æˆ–ç»Ÿè®¡å‡½æ•°æˆ–ç»„å‡½æ•°
+åˆ†ç±»ï¼š
+sum æ±‚å’Œã€avg å¹³å‡å€¼ã€max æœ€å¤§å€¼ ã€min æœ€å°å€¼ ã€count è®¡ç®—ä¸ªæ•°
+ç‰¹ç‚¹ï¼š
+1ã€sumã€avgä¸€èˆ¬ç”¨äºŽå¤„ç†æ•°å€¼åž‹
+                maxã€minã€countå¯ä»¥å¤„ç†ä»»ä½•ç±»åž‹
+2ã€ä»¥ä¸Šåˆ†ç»„å‡½æ•°éƒ½å¿½ç•¥nullå€¼
+3ã€å¯ä»¥å’Œdistinctæ­é…å®žçŽ°åŽ»é‡çš„è¿ç®—
+4ã€countå‡½æ•°çš„å•ç‹¬ä»‹ç»
+      ä¸€èˆ¬ä½¿ç”¨count(*)ç”¨ä½œç»Ÿè®¡è¡Œæ•°
+5ã€å’Œåˆ†ç»„å‡½æ•°ä¸€åŒæŸ¥è¯¢çš„å­—æ®µè¦æ±‚æ˜¯group byåŽçš„å­—æ®µ
 */
 
 

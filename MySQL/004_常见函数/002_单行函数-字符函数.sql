@@ -1,41 +1,41 @@
--- 1.length »ñÈ¡²ÎÊıÖµµÄ×Ö½Ú¸öÊı
+-- 1.length è·å–å‚æ•°å€¼çš„å­—èŠ‚ä¸ªæ•°
 select length('john');
-select length('ÕÅÈı·áhahaha');
+select length('å¼ ä¸‰ä¸°hahaha');
 SHOW VARIABLES LIKE '%char%'
 
--- 2.concat Æ´½Ó×Ö·û´®
-select concat(last_name,'_',first_name) ĞÕÃû from employees;
+-- 2.concat æ‹¼æ¥å­—ç¬¦ä¸²
+select concat(last_name,'_',first_name) å§“å from employees;
 
--- 3.upper¡¢lower
+-- 3.upperã€lower
 select upper('john');
 select lower('joHn');
--- Ê¾Àı£º½«ĞÕ±ä´óĞ´£¬Ãû±äĞ¡Ğ´£¬È»ºóÆ´½Ó
-select concat(upper(last_name),lower(first_name))  ĞÕÃû from employees;
+-- ç¤ºä¾‹ï¼šå°†å§“å˜å¤§å†™ï¼Œåå˜å°å†™ï¼Œç„¶åæ‹¼æ¥
+select concat(upper(last_name),lower(first_name))  å§“å from employees;
 
--- 4.substr¡¢substring
-×¢Òâ£ºË÷Òı´Ó1¿ªÊ¼
--- ½ØÈ¡´ÓÖ¸¶¨Ë÷Òı´¦ºóÃæËùÓĞ×Ö·û
-select substr('ÀîÄª³î°®ÉÏÁËÂ½Õ¹Ôª',7)  out_put;
+-- 4.substrã€substring
+æ³¨æ„ï¼šç´¢å¼•ä»1å¼€å§‹
+-- æˆªå–ä»æŒ‡å®šç´¢å¼•å¤„åé¢æ‰€æœ‰å­—ç¬¦
+select substr('æè«æ„çˆ±ä¸Šäº†é™†å±•å…ƒ',7)  out_put;
 
--- ½ØÈ¡´ÓÖ¸¶¨Ë÷Òı´¦Ö¸¶¨×Ö·û³¤¶ÈµÄ×Ö·û
-select substr('ÀîÄª³î°®ÉÏÁËÂ½Õ¹Ôª',1,3) out_put;
+-- æˆªå–ä»æŒ‡å®šç´¢å¼•å¤„æŒ‡å®šå­—ç¬¦é•¿åº¦çš„å­—ç¬¦
+select substr('æè«æ„çˆ±ä¸Šäº†é™†å±•å…ƒ',1,3) out_put;
 
--- °¸Àı£ºĞÕÃûÖĞÊ××Ö·û´óĞ´£¬ÆäËû×Ö·ûĞ¡Ğ´È»ºóÓÃ_Æ´½Ó£¬ÏÔÊ¾³öÀ´
+-- æ¡ˆä¾‹ï¼šå§“åä¸­é¦–å­—ç¬¦å¤§å†™ï¼Œå…¶ä»–å­—ç¬¦å°å†™ç„¶åç”¨_æ‹¼æ¥ï¼Œæ˜¾ç¤ºå‡ºæ¥
 select concat(upper(substr(last_name,1,1)),'_',lower(substr(last_name,2)))  out_put
 from employees;
 
--- 5.instr ·µ»Ø×Ó´®µÚÒ»´Î³öÏÖµÄË÷Òı£¬Èç¹ûÕÒ²»µ½·µ»Ø0
-select instr('Ñî²»ÒóÁùÏÀ»Ú°®ÉÏÁËÒóÁùÏÀ','Òó°ËÏÀ') as out_put;
+-- 5.instr è¿”å›å­ä¸²ç¬¬ä¸€æ¬¡å‡ºç°çš„ç´¢å¼•ï¼Œå¦‚æœæ‰¾ä¸åˆ°è¿”å›0
+select instr('æ¨ä¸æ®·å…­ä¾ æ‚”çˆ±ä¸Šäº†æ®·å…­ä¾ ','æ®·å…«ä¾ ') as out_put;
 
 -- 6.trim
-select length(trim('    ÕÅ´äÉ½    ')) as out_put;
-select trim('aa' from 'aaaaaaaaaÕÅaaaaaaaaaaaa´äÉ½aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')  as out_put;
+select length(trim('    å¼ ç¿ å±±    ')) as out_put;
+select trim('aa' from 'aaaaaaaaaå¼ aaaaaaaaaaaaç¿ å±±aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')  as out_put;
 
--- 7.lpad ÓÃÖ¸¶¨µÄ×Ö·ûÊµÏÖ×óÌî³äÖ¸¶¨³¤¶È
-select lpad('ÒóËØËØ',2,'*') as out_put;
+-- 7.lpad ç”¨æŒ‡å®šçš„å­—ç¬¦å®ç°å·¦å¡«å……æŒ‡å®šé•¿åº¦
+select lpad('æ®·ç´ ç´ ',2,'*') as out_put;
 
--- 8.rpad ÓÃÖ¸¶¨µÄ×Ö·ûÊµÏÖÓÒÌî³äÖ¸¶¨³¤¶È
-select rpad('ÒóËØËØ',12,'ab') as out_put;
+-- 8.rpad ç”¨æŒ‡å®šçš„å­—ç¬¦å®ç°å³å¡«å……æŒ‡å®šé•¿åº¦
+select rpad('æ®·ç´ ç´ ',12,'ab') as out_put;
 
--- 9.replace Ìæ»»
-select replace('ÖÜÜÆÈôÖÜÜÆÈôÖÜÜÆÈôÖÜÜÆÈôÕÅÎŞ¼É°®ÉÏÁËÖÜÜÆÈô','ÖÜÜÆÈô','ÕÔÃô') as out_put;
+-- 9.replace æ›¿æ¢
+select replace('å‘¨èŠ·è‹¥å‘¨èŠ·è‹¥å‘¨èŠ·è‹¥å‘¨èŠ·è‹¥å¼ æ— å¿Œçˆ±ä¸Šäº†å‘¨èŠ·è‹¥','å‘¨èŠ·è‹¥','èµµæ•') as out_put;

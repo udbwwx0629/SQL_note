@@ -1,6 +1,6 @@
--- ÊµÏÖ·Ö×éÇ°µÄÉ¸Ñ¡
--- °¸Àı1:²éÑ¯ÓÊÏäÖĞ°üº¬a×Ö·ûµÄÃ¿¸ö²¿ÃÅµÄ×î¸ß¹¤×Ê
+-- å®ç°åˆ†ç»„å‰çš„ç­›é€‰
+-- æ¡ˆä¾‹1:æŸ¥è¯¢é‚®ç®±ä¸­åŒ…å«aå­—ç¬¦çš„æ¯ä¸ªéƒ¨é—¨çš„æœ€é«˜å·¥èµ„
 select max(salary),department_id from employees where email like '%a%' group by department_id;
 
--- °¸Àı2:²éÑ¯ÓĞ½±½ğµÄÃ¿¸öÁìµ¼ÊÖÏÂÔ±¹¤µÄÆ½¾ù¹¤×Ê
+-- æ¡ˆä¾‹2:æŸ¥è¯¢æœ‰å¥–é‡‘çš„æ¯ä¸ªé¢†å¯¼æ‰‹ä¸‹å‘˜å·¥çš„å¹³å‡å·¥èµ„
 select avg(salary),manager_id from employees where commission_pct is not null group by manager_id;

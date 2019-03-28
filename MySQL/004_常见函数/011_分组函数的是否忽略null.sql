@@ -1,4 +1,4 @@
--- 3¡¢ÊÇ·ñºöÂÔnull
+-- 3ã€æ˜¯å¦å¿½ç•¥null
 select sum(commission_pct),avg(commission_pct),sum(commission_pct)/35,sum(commission_pct)/107
 from employees;
 

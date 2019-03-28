@@ -1,2 +1,2 @@
--- °¸Àı:²éÑ¯Ô±¹¤ÃûºÍÉÏ¼¶µÄÃû³Æ
+-- æ¡ˆä¾‹:æŸ¥è¯¢å‘˜å·¥åå’Œä¸Šçº§çš„åç§°
 select e.last_name,e.employees_id,m.last_name, e.employees_id from employees e,employees m where e.manager_id=m.employee_id;

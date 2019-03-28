@@ -1,19 +1,19 @@
--- SELECTºóÃæ  /* ½ö½öÖ§³Ö±êÁ¿×Ó²éÑ¯ */
--- °¸Àı1:²éÑ¯Ã¿¸ö²¿ÃÅµÄÔ±¹¤¸öÊı
+-- SELECTåé¢  /* ä»…ä»…æ”¯æŒæ ‡é‡å­æŸ¥è¯¢ */
+-- æ¡ˆä¾‹1:æŸ¥è¯¢æ¯ä¸ªéƒ¨é—¨çš„å‘˜å·¥ä¸ªæ•°
 select d.*,(
                 select count(*)
                 from employees e
-                where e.department_id =d.department_id) ¸öÊı
+                where e.department_id =d.department_id) ä¸ªæ•°
 from departments d;
--- °¸Àı2:²éÑ¯Ô±¹¤ºÅ=102µÄ²¿ÃÅÃû,×Ó²éÑ¯ÖĞÊ¹ÓÃÄÚÁ¬½Ó,·½·¨¿ÉÒÔ,¶à´ËÒ»¾Ù
+-- æ¡ˆä¾‹2:æŸ¥è¯¢å‘˜å·¥å·=102çš„éƒ¨é—¨å,å­æŸ¥è¯¢ä¸­ä½¿ç”¨å†…è¿æ¥,æ–¹æ³•å¯ä»¥,å¤šæ­¤ä¸€ä¸¾
 select (
                select department_name
                from departments d
                inner join employees e
                on d.department_id=e.department_id
-               where e.employee_id=102) ²¿ÃÅÃû ;
--- »ò  Ö±½ÓÊ¹ÓÃÄÚÁ¬½Ó(²»ÍÆ¼ö)
-select department_name ²¿ÃÅÃû 
+               where e.employee_id=102) éƒ¨é—¨å ;
+-- æˆ–  ç›´æ¥ä½¿ç”¨å†…è¿æ¥(ä¸æ¨è)
+select department_name éƒ¨é—¨å
 from departments d
 inner join employees e
 on d.department_id =e.department_id

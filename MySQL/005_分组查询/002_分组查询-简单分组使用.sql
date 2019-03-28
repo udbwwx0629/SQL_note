@@ -1,6 +1,6 @@
--- ¼òµ¥µÄ·Ö×é²éÑ¯£º
-°¸Àı1:²éÑ¯Ã¿¸ö¹¤ÖÖµÄ×î¸ß¹¤×Ê
+-- ç®€å•çš„åˆ†ç»„æŸ¥è¯¢ï¼š
+æ¡ˆä¾‹1:æŸ¥è¯¢æ¯ä¸ªå·¥ç§çš„æœ€é«˜å·¥èµ„
 select max(salary),job_id from employees group by job_id;
 
-°¸Àı:²éÑ¯Ã¿¸öÎ»ÖÃÉÏµÄ²¿ÃÅ¸öÊı
+æ¡ˆä¾‹:æŸ¥è¯¢æ¯ä¸ªä½ç½®ä¸Šçš„éƒ¨é—¨ä¸ªæ•°
 select count(*),location_id from departments group by location_id;

@@ -1,5 +1,5 @@
 
--- Ò»¡¢²éÑ¯±àºÅ>3µÄÅ®ÉñµÄÄĞÅóÓÑĞÅÏ¢£¬Èç¹ûÓĞÔòÁĞ³öÏêÏ¸£¬Èç¹ûÃ»ÓĞ£¬ÓÃnullÌî³ä
+-- ä¸€ã€æŸ¥è¯¢ç¼–å·>3çš„å¥³ç¥çš„ç”·æœ‹å‹ä¿¡æ¯ï¼Œå¦‚æœæœ‰åˆ™åˆ—å‡ºè¯¦ç»†ï¼Œå¦‚æœæ²¡æœ‰ï¼Œç”¨nullå¡«å……
 
 select b.id,b.name,bo.*
 from beauty b
@@ -7,21 +7,21 @@ left outer join boys bo
 on b.`boyfriend_id` = bo.`id`
 WHERE b.`id`>3;
 
--- ¶ş¡¢²éÑ¯ÄÄ¸ö³ÇÊĞÃ»ÓĞ²¿ÃÅ
+-- äºŒã€æŸ¥è¯¢å“ªä¸ªåŸå¸‚æ²¡æœ‰éƒ¨é—¨
 select city
 from departments d
 right outer join locations l
 on d.`location_id`=l.`location_id`
 WHERE  d.`department_id` IS NULL;
 
--- Èı¡¢²éÑ¯²¿ÃÅÃûÎªSAL»òITµÄÔ±¹¤ĞÅÏ¢
--- ·½·¨Ò»
+-- ä¸‰ã€æŸ¥è¯¢éƒ¨é—¨åä¸ºSALæˆ–ITçš„å‘˜å·¥ä¿¡æ¯
+-- æ–¹æ³•ä¸€
 select e.*,d.department_name,d.`department_id`
 FROM departments  d
 LEFT JOIN employees e
 ON d.`department_id` = e.`department_id`
 where d.`department_name` IN('SAL','IT');
 
--- ·½·¨¶ş
+-- æ–¹æ³•äºŒ
 select * from departments
 where `department_name` IN('SAL','IT');

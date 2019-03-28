@@ -1,20 +1,20 @@
--- �������麯��
+-- 二、分组函数
 /*
-���ܣ�����ͳ��ʹ�ã��ֳ�Ϊ�ۺϺ�����ͳ�ƺ������麯��
+功能：用作统计使用，又称为聚合函数或统计函数或组函数
 
-���ࣺ
-sum ��͡�avg ƽ��ֵ��max ���ֵ ��min ��Сֵ ��count �������
+分类：
+sum 求和、avg 平均值、max 最大值 、min 最小值 、count 计算个数
 
-�ص㣺
-1��sum��avgһ�����ڴ�����ֵ��
-   max��min��count���Դ����κ�����
-2�����Ϸ��麯��������nullֵ
+特点：
+1、sum、avg一般用于处理数值型
+   max、min、count可以处理任何类型
+2、以上分组函数都忽略null值
 
-3�����Ժ�distinct����ʵ��ȥ�ص�����
+3、可以和distinct搭配实现去重的运算
 
-4��count�����ĵ�������
-һ��ʹ��count(*)����ͳ������
+4、count函数的单独介绍
+一般使用count(*)用作统计行数
 
-5���ͷ��麯��һͬ��ѯ���ֶ�Ҫ����group by����ֶ�
+5、和分组函数一同查询的字段要求是group by后的字段
 
 */

@@ -1,32 +1,32 @@
--- now ·µ»Øµ±Ç°ÏµÍ³ÈÕÆÚ+Ê±¼ä
+-- now è¿”å›å½“å‰ç³»ç»Ÿæ—¥æœŸ+æ—¶é—´
 select NOW();
 
--- curdate ·µ»Øµ±Ç°ÏµÍ³ÈÕÆÚ£¬²»°üº¬Ê±¼ä
+-- curdate è¿”å›å½“å‰ç³»ç»Ÿæ—¥æœŸï¼Œä¸åŒ…å«æ—¶é—´
 select CURDATE();
 
--- curtime ·µ»Øµ±Ç°Ê±¼ä£¬²»°üº¬ÈÕÆÚ
+-- curtime è¿”å›å½“å‰æ—¶é—´ï¼Œä¸åŒ…å«æ—¥æœŸ
 select CURTIME();
 
--- ¿ÉÒÔ»ñÈ¡Ö¸¶¨µÄ²¿·Ö£¬Äê¡¢ÔÂ¡¢ÈÕ¡¢Ğ¡Ê±¡¢·ÖÖÓ¡¢Ãë
-select YEAR(NOW()) Äê;
-select YEAR('1998-1-1') Äê;
-select  YEAR(hiredate) Äê from employees;
-select MONTH(NOW()) ÔÂ;
-select MONTHNAME(NOW()) ÔÂ;
+-- å¯ä»¥è·å–æŒ‡å®šçš„éƒ¨åˆ†ï¼Œå¹´ã€æœˆã€æ—¥ã€å°æ—¶ã€åˆ†é’Ÿã€ç§’
+select YEAR(NOW()) å¹´;
+select YEAR('1998-1-1') å¹´;
+select  YEAR(hiredate) å¹´ from employees;
+select MONTH(NOW()) æœˆ;
+select MONTHNAME(NOW()) æœˆ;
 
--- str_to_date ½«×Ö·ûÍ¨¹ıÖ¸¶¨µÄ¸ñÊ½×ª»»³ÉÈÕÆÚ
+-- str_to_date å°†å­—ç¬¦é€šè¿‡æŒ‡å®šçš„æ ¼å¼è½¬æ¢æˆæ—¥æœŸ
 select STR_TO_DATE('1998-3-2','%Y-%c-%d') as out_put;
 
--- ²éÑ¯ÈëÖ°ÈÕÆÚÎª1992--4-3µÄÔ±¹¤ĞÅÏ¢
--- ·½·¨1:
+-- æŸ¥è¯¢å…¥èŒæ—¥æœŸä¸º1992--4-3çš„å‘˜å·¥ä¿¡æ¯
+-- æ–¹æ³•1:
 select * from employees where hiredate = '1992-4-3';
--- ·½·¨2:
+-- æ–¹æ³•2:
 select * from employees where hiredate = STR_TO_DATE('4-3 1992','%c-%d %Y');
 
--- date_format ½«ÈÕÆÚ×ª»»³É×Ö·û
-select DATE_FORMAT(NOW(),'%yÄê%mÔÂ%dÈÕ') as out_put;
+-- date_format å°†æ—¥æœŸè½¬æ¢æˆå­—ç¬¦
+select DATE_FORMAT(NOW(),'%yå¹´%mæœˆ%dæ—¥') as out_put;
 
--- ²éÑ¯ÓĞ½±½ğµÄÔ±¹¤ÃûºÍÈëÖ°ÈÕÆÚ(xxÔÂ/xxÈÕ xxÄê)
-select last_name,DATE_FORMAT(hiredate,'%mÔÂ/%dÈÕ %yÄê') ÈëÖ°ÈÕÆÚ
+-- æŸ¥è¯¢æœ‰å¥–é‡‘çš„å‘˜å·¥åå’Œå…¥èŒæ—¥æœŸ(xxæœˆ/xxæ—¥ xxå¹´)
+select last_name,DATE_FORMAT(hiredate,'%mæœˆ/%dæ—¥ %yå¹´') å…¥èŒæ—¥æœŸ
 from employees
 where commission_pct is not null;

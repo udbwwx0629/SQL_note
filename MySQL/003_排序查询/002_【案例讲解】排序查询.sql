@@ -1,15 +1,15 @@
--- 1.²éÑ¯Ô±¹¤µÄĞÕÃûºÍ²¿ÃÅºÅºÍÄêĞ½£¬°´ÄêĞ½½µĞò °´ĞÕÃûÉıĞò
-select last_name,department_id,salary*12*(1+IFNULL(commission_pct,0)) ÄêĞ½
+-- 1.æŸ¥è¯¢å‘˜å·¥çš„å§“åå’Œéƒ¨é—¨å·å’Œå¹´è–ªï¼ŒæŒ‰å¹´è–ªé™åº æŒ‰å§“åå‡åº
+select last_name,department_id,salary*12*(1+IFNULL(commission_pct,0)) å¹´è–ª
 from employees
-order by ÄêĞ½ desc,last_name asc;
+order by å¹´è–ª desc,last_name asc;
 
--- 2.Ñ¡Ôñ¹¤×Ê²»ÔÚ8000µ½17000µÄÔ±¹¤µÄĞÕÃûºÍ¹¤×Ê£¬°´¹¤×Ê½µĞò
+-- 2.é€‰æ‹©å·¥èµ„ä¸åœ¨8000åˆ°17000çš„å‘˜å·¥çš„å§“åå’Œå·¥èµ„ï¼ŒæŒ‰å·¥èµ„é™åº
 select last_name,salary
 from employees
 where salary not between 8000 and 17000
 order by salary desc;
 
--- 3.²éÑ¯ÓÊÏäÖĞ°üº¬eµÄÔ±¹¤ĞÅÏ¢£¬²¢ÏÈ°´ÓÊÏäµÄ×Ö½ÚÊı½µĞò£¬ÔÙ°´²¿ÃÅºÅÉıĞò
+-- 3.æŸ¥è¯¢é‚®ç®±ä¸­åŒ…å«eçš„å‘˜å·¥ä¿¡æ¯ï¼Œå¹¶å…ˆæŒ‰é‚®ç®±çš„å­—èŠ‚æ•°é™åºï¼Œå†æŒ‰éƒ¨é—¨å·å‡åº
 
 select *,length(email)
 from employees

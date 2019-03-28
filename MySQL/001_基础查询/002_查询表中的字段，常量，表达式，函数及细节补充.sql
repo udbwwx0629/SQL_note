@@ -1,18 +1,18 @@
--- ��myemployees��
+-- 打开myemployees库
 	USE myemployees;
 
--- 1.��ѯ���еĵ����ֶ�
+-- 1.查询表中的单个字段
 	select last_name from employees;
 
--- 2.��ѯ���еĶ���ֶ�
+-- 2.查询表中的多个字段
 	select last_name,salary,email from employees;
 
--- 3.��ѯ���е������ֶ�
+-- 3.查询表中的所有字段
 
-	-- ��һ�ַ���,˳���ԭ����˳����һ����
+	-- 第一种方法,顺序跟原表的顺序是一样的
 	select * from employees;
 
-	-- �ڶ��ַ������鷳����Ҫһ��һ��ȥд������˳������Լ���,
+	-- 第二种方法，麻烦，需要一个一个去写，但是顺序可以自己定,
 	select
     `employee_id`,
     `first_name`,
@@ -29,17 +29,17 @@
     `hiredate`
 	FROM employees;
 
--- ϸ�ڲ��䣬���غţ�1�Աߵ�` `,���������ϣ����ؼ��ּӣ�����˵������ȥ��,����
+-- 细节补充，着重号，1旁边的` `,给列名加上，给关键字加，着重说明，可去掉,如下
 	select `NAME` FROM employees;
 
--- 4.��ѯ����ֵ
+-- 4.查询常量值
 	select 100;
 	select 'john';
 
--- 5.��ѯ����ʽ
+-- 5.查询表达式
 	select 100 * 98;
 
--- 6.��ѯ����
+-- 6.查询函数
 	select VERSION();
 
 

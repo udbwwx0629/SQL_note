@@ -1,42 +1,42 @@
--- 1¡¢µÈÖµÁ¬½Ó
+-- 1ã€ç­‰å€¼è¿æ¥
 
--- °¸Àı1.²éÑ¯Ô±¹¤Ãû¡¢²¿ÃÅÃû
+-- æ¡ˆä¾‹1.æŸ¥è¯¢å‘˜å·¥åã€éƒ¨é—¨å
 select last_name,department_name
 from departments d
  join  employees e
 on e.`department_id` = d.`department_id`;
--- °¸Àı2.²éÑ¯Ãû×ÖÖĞ°üº¬eµÄÔ±¹¤ÃûºÍ¹¤ÖÖÃû£¨Ìí¼ÓÉ¸Ñ¡£©
+-- æ¡ˆä¾‹2.æŸ¥è¯¢åå­—ä¸­åŒ…å«eçš„å‘˜å·¥åå’Œå·¥ç§åï¼ˆæ·»åŠ ç­›é€‰ï¼‰
 select last_name,job_title
 from employees e
 inner join jobs j
 on e.`job_id`=  j.`job_id`
 WHERE e.`last_name` LIKE '%e%';
--- 3. ²éÑ¯²¿ÃÅ¸öÊı>3µÄ³ÇÊĞÃûºÍ²¿ÃÅ¸öÊı£¬£¨Ìí¼Ó·Ö×é+É¸Ñ¡£©
--- ¢Ù²éÑ¯Ã¿¸ö³ÇÊĞµÄ²¿ÃÅ¸öÊı
--- ¢ÚÔÚ¢Ù½á¹ûÉÏÉ¸Ñ¡Âú×ãÌõ¼şµÄ
-select city,count(*) ²¿ÃÅ¸öÊı
+-- 3. æŸ¥è¯¢éƒ¨é—¨ä¸ªæ•°>3çš„åŸå¸‚åå’Œéƒ¨é—¨ä¸ªæ•°ï¼Œï¼ˆæ·»åŠ åˆ†ç»„+ç­›é€‰ï¼‰
+-- â‘ æŸ¥è¯¢æ¯ä¸ªåŸå¸‚çš„éƒ¨é—¨ä¸ªæ•°
+-- â‘¡åœ¨â‘ ç»“æœä¸Šç­›é€‰æ»¡è¶³æ¡ä»¶çš„
+select city,count(*) éƒ¨é—¨ä¸ªæ•°
 from departments d
 inner join locations l
 on d.`location_id`=l.`location_id`
 GROUP BY city
 HAVING COUNT(*)>3;
 
--- °¸Àı4.²éÑ¯ÄÄ¸ö²¿ÃÅµÄÔ±¹¤¸öÊı>3µÄ²¿ÃÅÃûºÍÔ±¹¤¸öÊı£¬²¢°´¸öÊı½µĞò£¨Ìí¼ÓÅÅĞò£©
--- ¢Ù²éÑ¯Ã¿¸ö²¿ÃÅµÄÔ±¹¤¸öÊı
+-- æ¡ˆä¾‹4.æŸ¥è¯¢å“ªä¸ªéƒ¨é—¨çš„å‘˜å·¥ä¸ªæ•°>3çš„éƒ¨é—¨åå’Œå‘˜å·¥ä¸ªæ•°ï¼Œå¹¶æŒ‰ä¸ªæ•°é™åºï¼ˆæ·»åŠ æ’åºï¼‰
+-- â‘ æŸ¥è¯¢æ¯ä¸ªéƒ¨é—¨çš„å‘˜å·¥ä¸ªæ•°
 select count(*),department_name
 from employees e
 inner join departments d
 on e.`department_id`=d.`department_id`
 GROUP BY department_name
--- ¢Ú ÔÚ¢Ù½á¹ûÉÏÉ¸Ñ¡Ô±¹¤¸öÊı>3µÄ¼ÇÂ¼£¬²¢ÅÅĞò
-select count(*) ¸öÊı,department_name
+-- â‘¡ åœ¨â‘ ç»“æœä¸Šç­›é€‰å‘˜å·¥ä¸ªæ•°>3çš„è®°å½•ï¼Œå¹¶æ’åº
+select count(*) ä¸ªæ•°,department_name
 from employees e
 inner join departments d
 on e.`department_id`=d.`department_id`
 GROUP BY department_name
 HAVING COUNT(*)>3
 ORDER BY COUNT(*) DESC;
--- 5.²éÑ¯Ô±¹¤Ãû¡¢²¿ÃÅÃû¡¢¹¤ÖÖÃû£¬²¢°´²¿ÃÅÃû½µĞò£¨Ìí¼ÓÈı±íÁ¬½Ó£©
+-- 5.æŸ¥è¯¢å‘˜å·¥åã€éƒ¨é—¨åã€å·¥ç§åï¼Œå¹¶æŒ‰éƒ¨é—¨åé™åºï¼ˆæ·»åŠ ä¸‰è¡¨è¿æ¥ï¼‰
 select last_name,department_name,job_title
 from employees e
 inner join departments d on e.`department_id`=d.`department_id`

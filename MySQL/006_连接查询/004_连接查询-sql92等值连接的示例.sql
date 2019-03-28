@@ -1,18 +1,18 @@
--- 1.Á½¸ö±íµÄË³ĞòÊÇ·ñ¿ÉÒÔµ÷»»(¿ÉÒÔ)
+-- 1.ä¸¤ä¸ªè¡¨çš„é¡ºåºæ˜¯å¦å¯ä»¥è°ƒæ¢(å¯ä»¥)
 select e.last_name,e.job_id,j.job_title from jobs j,employees e where e.job_id=j.job_id;
--- 2.¿ÉÒÔ¼ÓÉ¸Ñ¡(¿ÉÒÔ)
--- °¸Àı:²éÑ¯ÓĞ½±½ğµÄÔ±¹¤Ãû²¿ÃÅÃû
+-- 2.å¯ä»¥åŠ ç­›é€‰(å¯ä»¥)
+-- æ¡ˆä¾‹:æŸ¥è¯¢æœ‰å¥–é‡‘çš„å‘˜å·¥åéƒ¨é—¨å
 select last_name,department_name from employees e ,departments d where e.department_id=d.department_id and commission_pct is not null;
--- °¸Àı2:²éÑ¯³ÇÊĞÖĞµÚ¶ş¸ö×Ö·ûÎª0µÄ²¿ÃÅÃûºÍ³ÇÊĞÃû
+-- æ¡ˆä¾‹2:æŸ¥è¯¢åŸå¸‚ä¸­ç¬¬äºŒä¸ªå­—ç¬¦ä¸º0çš„éƒ¨é—¨åå’ŒåŸå¸‚å
 select department_name,city from departments d ,location l where d.location_id=l.location_id and city like '_o%';
--- 3:¿ÉÒÔ¼Ó·Ö×é(¿ÉÒÔ)
--- °¸Àı1:²éÑ¯Ã¿¸ö³ÇÊĞµÄ²¿ÃÅ¸öÊı
-select count(*) ¸öÊı ,city from departments d, location l where d.location_id=l.location_id group by city;
--- °¸Àı2:²éÑ¯ÓĞ½±½ğµÄÃ¿¸ö²¿ÃÅ²¿ÃÅÃûÁìµ¼±àºÅºÍ¸Ã²¿ÃÅ×îµÍ¹¤×Ê
+-- 3:å¯ä»¥åŠ åˆ†ç»„(å¯ä»¥)
+-- æ¡ˆä¾‹1:æŸ¥è¯¢æ¯ä¸ªåŸå¸‚çš„éƒ¨é—¨ä¸ªæ•°
+select count(*) ä¸ªæ•° ,city from departments d, location l where d.location_id=l.location_id group by city;
+-- æ¡ˆä¾‹2:æŸ¥è¯¢æœ‰å¥–é‡‘çš„æ¯ä¸ªéƒ¨é—¨éƒ¨é—¨åé¢†å¯¼ç¼–å·å’Œè¯¥éƒ¨é—¨æœ€ä½å·¥èµ„
 select department_name d,manager_id  from departments d,employees e  where d.department_id=e.department_id and commission_pct is not null group by  department_name,d.manager_id;
--- 4.¿ÉÒÔ¼ÓÅÅĞò
--- °¸Àı:²éÑ¯Ã¿¸ö¹¤ÖÖÃûºÍÔ±¹¤¸öÊı£¬²¢ÇÒ°´Ô±¹¤¸öÊı½µĞò
+-- 4.å¯ä»¥åŠ æ’åº
+-- æ¡ˆä¾‹:æŸ¥è¯¢æ¯ä¸ªå·¥ç§åå’Œå‘˜å·¥ä¸ªæ•°ï¼Œå¹¶ä¸”æŒ‰å‘˜å·¥ä¸ªæ•°é™åº
 select job_title,count(*) from employees e,jobs j where e.job_id=j.job_id group by job_title order by count(*) desc;
--- 5.¿ÉÒÔÊµÏÖÈı±íÁ¬½Ó
--- °¸Àı:²éÑ¯Ô±¹¤Ãû£¬²¿ÃÅÃûºÍËùÔÚµÄ³ÇÊĞ
+-- 5.å¯ä»¥å®ç°ä¸‰è¡¨è¿æ¥
+-- æ¡ˆä¾‹:æŸ¥è¯¢å‘˜å·¥åï¼Œéƒ¨é—¨åå’Œæ‰€åœ¨çš„åŸå¸‚
 select last_name, department_name,city from employees e,departments d,location l where e.department_id=d.department_id and d.location_id =l.location_id and city like 's%' order BYdepartment_name DESC;

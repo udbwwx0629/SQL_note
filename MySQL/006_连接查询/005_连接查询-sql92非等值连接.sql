@@ -1,2 +1,2 @@
--- °¸Àý:²éÑ¯Ô±¹¤µÄ¹¤×ÊºÍ¹¤×Ê¼¶±ð,ÏÔÊ¾µÈ¼¶AµÄ¹¤×Ê
+-- æ¡ˆä¾‹:æŸ¥è¯¢å‘˜å·¥çš„å·¥èµ„å’Œå·¥èµ„çº§åˆ«,æ˜¾ç¤ºç­‰çº§Açš„å·¥èµ„
 select salary,grade_level from employees e,job_grade g where salary between g.lowest_sal and higest_sal and g.grade_level ='A';

@@ -1,6 +1,6 @@
--- 3�����Ӳ�ѯ�������һ�ж��л���ж��У�
+-- 3、行子查询（结果集一行多列或多行多列）
 
--- ��������ѯԱ�������С���ҹ�����ߵ�Ա����Ϣ
+-- 案例：查询员工编号最小并且工资最高的员工信息
 
 select *
 from employees
@@ -9,15 +9,15 @@ where (employee_id,salary)=(
 	from employees
 );
 
--- �ٲ�ѯ��С��Ա�����
+-- ①查询最小的员工编号
 select min(employee_id)
 from employees
 
--- �ڲ�ѯ��߹���
+-- ②查询最高工资
 select max(salary)
 from employees
 
--- �۲�ѯԱ����Ϣ
+-- ③查询员工信息
 select *
 from employees
 where employee_id=(

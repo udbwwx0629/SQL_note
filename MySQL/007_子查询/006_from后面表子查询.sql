@@ -1,11 +1,11 @@
--- FROMºóÃæ
+-- FROMåé¢
 
--- °¸Àı1£º²éÑ¯Ã¿¸ö²¿ÃÅµÄÆ½¾ù¹¤×ÊµÄ¹¤×ÊµÈ¼¶
--- ¢Ù.²éÑ¯Ã¿¸ö²¿ÃÅµÄÆ½¾ù¹¤×Ê
+-- æ¡ˆä¾‹1ï¼šæŸ¥è¯¢æ¯ä¸ªéƒ¨é—¨çš„å¹³å‡å·¥èµ„çš„å·¥èµ„ç­‰çº§
+-- â‘ .æŸ¥è¯¢æ¯ä¸ªéƒ¨é—¨çš„å¹³å‡å·¥èµ„
 select avg(salary),department_id from employees group by department_id ;
--- ¢Ú.²éÑ¯¹¤×ÊµÈ¼¶ĞÅÏ¢
+-- â‘¡.æŸ¥è¯¢å·¥èµ„ç­‰çº§ä¿¡æ¯
 /*
-´´½¨job_grades±í
+åˆ›å»ºjob_gradesè¡¨
  CREATE TABLE job_grades
            (grade_level VARCHAR(3),
            lowest_sal  int,
@@ -24,7 +24,7 @@ INSERT INTO job_grades
 VALUES('F', 25000, 40000);
 */
 select * from job_grades;
--- ¢Û.Á¬½Ó¢ÙµÄ½á¹û¼¯ºÍjob_grades±í,É¸Ñ¡Ìõ¼şÆ½¾ù¹¤×Êbetween lowset_sal and highest_sal
+-- â‘¢.è¿æ¥â‘ çš„ç»“æœé›†å’Œjob_gradesè¡¨,ç­›é€‰æ¡ä»¶å¹³å‡å·¥èµ„between lowset_sal and highest_sal
 select ag_dep.*,g.grade_level
 from (
      select avg(salary) ag,department_id

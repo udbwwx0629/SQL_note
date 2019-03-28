@@ -1,52 +1,52 @@
--- 7.Æð±ðÃû
+-- 7.èµ·åˆ«å
 /*
- ¢Ù±ãÓÚÀí½â
- ¢ÚÈç¹ûÒª²éÑ¯µÄ×Ö¶ÎÓÐÖØÃûµÄÇé¿ö£¬Ê¹ÓÃ±ðÃû¿ÉÒÔÇø·Ö¿ªÀ´
+ â‘ ä¾¿äºŽç†è§£
+ â‘¡å¦‚æžœè¦æŸ¥è¯¢çš„å­—æ®µæœ‰é‡åçš„æƒ…å†µï¼Œä½¿ç”¨åˆ«åå¯ä»¥åŒºåˆ†å¼€æ¥
 */
-	-- ·½Ê½Ò»:Ê¹ÓÃAS
-	select 100%98 AS ½á¹û;
-	select last_name as ÐÕ,first_name as Ãû from employees;
+	-- æ–¹å¼ä¸€:ä½¿ç”¨AS
+	select 100%98 AS ç»“æžœ;
+	select last_name as å§“,first_name as å from employees;
 
-	-- ·½Ê½¶þ:Ê¹ÓÃ¿Õ¸ñ
-	select last_name ÐÕÃû,first_name Ãû from employees;
+	-- æ–¹å¼äºŒ:ä½¿ç”¨ç©ºæ ¼
+	select last_name å§“å,first_name å from employees;
 
-	-- °¸Àý:²éÑ¯salary,ÏÔÊ¾½á¹ûÎªout put
+	-- æ¡ˆä¾‹:æŸ¥è¯¢salary,æ˜¾ç¤ºç»“æžœä¸ºout put
 	select salary as "out put" from employees;
 
--- 8.È¥ÖØ(DISTINCT)
+-- 8.åŽ»é‡(DISTINCT)
 
-	-- °¸Àý:²éÑ¯Ô±¹¤±íÖÐÉæ¼°µ½µÄËùÓÐµÄ²¿ÃÅ±àºÅ
+	-- æ¡ˆä¾‹:æŸ¥è¯¢å‘˜å·¥è¡¨ä¸­æ¶‰åŠåˆ°çš„æ‰€æœ‰çš„éƒ¨é—¨ç¼–å·
 	select distinct department_id from employees;
 
--- 9¡¢+ºÅµÄ×÷ÓÃ
+-- 9ã€+å·çš„ä½œç”¨
 /*
-	javaÖÐµÄ+ºÅ£º
-	¢ÙÔËËã·û£¬Á½¸ö²Ù×÷Êý¶¼ÎªÊýÖµÐÍ
-	¢ÚÁ¬½Ó·û£¬Ö»ÒªÓÐÒ»¸ö²Ù×÷ÊýÎª×Ö·û´®
+	javaä¸­çš„+å·ï¼š
+	â‘ è¿ç®—ç¬¦ï¼Œä¸¤ä¸ªæ“ä½œæ•°éƒ½ä¸ºæ•°å€¼åž‹
+	â‘¡è¿žæŽ¥ç¬¦ï¼Œåªè¦æœ‰ä¸€ä¸ªæ“ä½œæ•°ä¸ºå­—ç¬¦ä¸²
 
-	ÔÚmysqlÖÐµÄ+ºÅ£º
-	     ½ö½öÖ»ÓÐÒ»¸ö¹¦ÄÜ£ºÔËËã·û
-	     Àý£º
-	     SELECT 90+100;      Á½¸ö²Ù×÷·û¶¼ÎªÊýÖµÐÍ£¬Ôò×ö¼Ó·¨ÔËËã
-	     SELECT '123'+77;    ÆäÖÐÒ»¸öÊÇ×Ö·ûÐÍ£¬ÊÔÍ¼½«×Ö·ûÐÍÊýÖµ×ª»»³ÉÊýÖµÐÍ,Èç¹û×ª»»³É¹¦£¬Ôò¼ÌÐø×ö¼Ó·¨ÔËËã
-	     SELECT 'john'+ 100; Èç¹û×ª»»Ê§°Ü£¬Ôò×Ö·ûÐÍÊýÖµ×ª»»³É0
-	     SELECT null +10;      Èç¹ûÆäÖÐÒ»·½Îªnull£¬Ôò½á¹ûÒ»¶¨Îªnull
+	åœ¨mysqlä¸­çš„+å·ï¼š
+	     ä»…ä»…åªæœ‰ä¸€ä¸ªåŠŸèƒ½ï¼šè¿ç®—ç¬¦
+	     ä¾‹ï¼š
+	     SELECT 90+100;      ä¸¤ä¸ªæ“ä½œç¬¦éƒ½ä¸ºæ•°å€¼åž‹ï¼Œåˆ™åšåŠ æ³•è¿ç®—
+	     SELECT '123'+77;    å…¶ä¸­ä¸€ä¸ªæ˜¯å­—ç¬¦åž‹ï¼Œè¯•å›¾å°†å­—ç¬¦åž‹æ•°å€¼è½¬æ¢æˆæ•°å€¼åž‹,å¦‚æžœè½¬æ¢æˆåŠŸï¼Œåˆ™ç»§ç»­åšåŠ æ³•è¿ç®—
+	     SELECT 'john'+ 100; å¦‚æžœè½¬æ¢å¤±è´¥ï¼Œåˆ™å­—ç¬¦åž‹æ•°å€¼è½¬æ¢æˆ0
+	     SELECT null +10;      å¦‚æžœå…¶ä¸­ä¸€æ–¹ä¸ºnullï¼Œåˆ™ç»“æžœä¸€å®šä¸ºnull
 */
 
--- 10¡¢¡¾²¹³ä¡¿Æ´½Ó CONCAT(str1,str2,...)
-	-- °¸Àý£º²éÑ¯Ô±¹¤ÃûºÍÐÕÁ¬½Ó³ÉÒ»¸ö×Ö¶Î£¬²¢ÏÔÊ¾ÎªÐÕÃû
-    select concat(last_name,first_name) as ÐÕÃû from employees;
-    select concat('a','b','c') as ½á¹û;
+-- 10ã€ã€è¡¥å……ã€‘æ‹¼æŽ¥ CONCAT(str1,str2,...)
+	-- æ¡ˆä¾‹ï¼šæŸ¥è¯¢å‘˜å·¥åå’Œå§“è¿žæŽ¥æˆä¸€ä¸ªå­—æ®µï¼Œå¹¶æ˜¾ç¤ºä¸ºå§“å
+    select concat(last_name,first_name) as å§“å from employees;
+    select concat('a','b','c') as ç»“æžœ;
 
--- 11¡¢¡¾²¹³ä¡¿ifnullº¯Êý
-	-- ¹¦ÄÜ£ºÅÐ¶ÏÄ³×Ö¶Î»ò±í´ïÊ½ÊÇ·ñÎªnull,Èç¹ûÎªnull·µ»ØÖ¸¶¨µÄÖµ£¬·ñÔò·µ»ØÔ­±¾µÄÖµ
-	-- °¸Àý£º
+-- 11ã€ã€è¡¥å……ã€‘ifnullå‡½æ•°
+	-- åŠŸèƒ½ï¼šåˆ¤æ–­æŸå­—æ®µæˆ–è¡¨è¾¾å¼æ˜¯å¦ä¸ºnull,å¦‚æžœä¸ºnullè¿”å›žæŒ‡å®šçš„å€¼ï¼Œå¦åˆ™è¿”å›žåŽŸæœ¬çš„å€¼
+	-- æ¡ˆä¾‹ï¼š
 	select IFNULL(commission_pct,0) from employees;
 
--- 12¡¢¡¾²¹³ä¡¿isnullº¯Êý
-	-- ÅÐ¶ÏÄ³×Ö¶Î»ò±í´ïÊ½ÊÇ·ñÎªnull,Èç¹ûÊÇ£¬Ôò·µ»Ø1£¬·ñÔò·µ»Ø0
-	-- °¸Àý£º
-	select commission_pct,ISNULL(commission_pct) ·µ»ØÖµ from employees;
+-- 12ã€ã€è¡¥å……ã€‘isnullå‡½æ•°
+	-- åˆ¤æ–­æŸå­—æ®µæˆ–è¡¨è¾¾å¼æ˜¯å¦ä¸ºnull,å¦‚æžœæ˜¯ï¼Œåˆ™è¿”å›ž1ï¼Œå¦åˆ™è¿”å›ž0
+	-- æ¡ˆä¾‹ï¼š
+	select commission_pct,ISNULL(commission_pct) è¿”å›žå€¼ from employees;
 
 
 

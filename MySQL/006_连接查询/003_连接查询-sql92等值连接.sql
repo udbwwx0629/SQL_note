@@ -1,24 +1,24 @@
--- Ò»¡¢sq192±ê×¼
+-- ä¸€ã€sq192æ ‡å‡†
 
--- 1.µÈÖµÁ¬½Ó
+-- 1.ç­‰å€¼è¿žæŽ¥
 /*
-¢Ù¶à±íµÈÖµÁ¬½ÓµÄ½á¹ûÎª¶à±íµÄ½»¼¯²¿·Ö
-¢Ún±íÁ¬½ÓÖÁÉÙÐèÒªn-1¸öÁ¬½ÓÌõ¼þ
-¢Û¶à±íµÄË³ÐòÃ»ÓÐÒªÇó
-¢ÜÒ»°ãÐèÒªÎª±íÆð±ðÃû
-¢Ý¿ÉÒÔ´îÅäÇ°Ãæ½éÉÜËùÓÐ×Ó¾äÊ¹ÓÃ£¬±ÈÈçÅÅÐò£¬·Ö×é£¬É¸Ñ¡
+â‘ å¤šè¡¨ç­‰å€¼è¿žæŽ¥çš„ç»“æžœä¸ºå¤šè¡¨çš„äº¤é›†éƒ¨åˆ†
+â‘¡nè¡¨è¿žæŽ¥è‡³å°‘éœ€è¦n-1ä¸ªè¿žæŽ¥æ¡ä»¶
+â‘¢å¤šè¡¨çš„é¡ºåºæ²¡æœ‰è¦æ±‚
+â‘£ä¸€èˆ¬éœ€è¦ä¸ºè¡¨èµ·åˆ«å
+â‘¤å¯ä»¥æ­é…å‰é¢ä»‹ç»æ‰€æœ‰å­å¥ä½¿ç”¨ï¼Œæ¯”å¦‚æŽ’åºï¼Œåˆ†ç»„ï¼Œç­›é€‰
 */
 
--- °¸Àý1:²éÑ¯Å®ÉñÃûºÍ¶ÔÓ¦µÄÄÐÉñÃû
+-- æ¡ˆä¾‹1:æŸ¥è¯¢å¥³ç¥žåå’Œå¯¹åº”çš„ç”·ç¥žå
 select NAME,boysName from beauty,boys where beauty.boyfriend_id=boys.id;
--- °¸Àý2:²éÑ¯Ô±¹¤ÃûºÍ¶ÔÓ¦µÄ²¿ÃÅÃû
+-- æ¡ˆä¾‹2:æŸ¥è¯¢å‘˜å·¥åå’Œå¯¹åº”çš„éƒ¨é—¨å
 select last_name,department_name from employees , departments where employees.department_id = departments.department_id;
 
--- 2.Îª±íÃûÆð±ðÃû
+-- 2.ä¸ºè¡¨åèµ·åˆ«å
 /*
-¢ÙÌá¸ßÓï¾äµÄ¼ò½à¶È
-¢ÚÇø·Ö¶à¸öÖØÃûµÄ×Ö¶Î
+â‘ æé«˜è¯­å¥çš„ç®€æ´åº¦
+â‘¡åŒºåˆ†å¤šä¸ªé‡åçš„å­—æ®µ
 */
--- °¸Àý:²éÑ¯Ô±¹¤Ãû£¬¹¤ÖÖºÅ£¬¹¤ÖÖÃû
+-- æ¡ˆä¾‹:æŸ¥è¯¢å‘˜å·¥åï¼Œå·¥ç§å·ï¼Œå·¥ç§å
 select e.last_name,job_id,job_title from employees e,jobs j where e.job_id=j.job_id;
 

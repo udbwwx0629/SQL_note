@@ -1,8 +1,8 @@
--- ·½Ê½¶ş:
+-- æ–¹å¼äºŒ:
 /*
-Óï·¨:
-insert into ±íÃû
-set ÁĞÃû=Öµ,ÁĞÃû=Öµ,.....
+è¯­æ³•:
+insert into è¡¨å
+set åˆ—å=å€¼,åˆ—å=å€¼,.....
 */
 
-insert into beauty SET id =19,NAME='ÁõÌÎ',phone='999';
+insert into beauty SET id =19,NAME='åˆ˜æ¶›',phone='999';

@@ -1,23 +1,23 @@
--- 1.	ÏÂÃæµÄÓï¾äÊÇ·ñ¿ÉÒÔÖ´ĞĞ³É¹¦
+-- 1.	ä¸‹é¢çš„è¯­å¥æ˜¯å¦å¯ä»¥æ‰§è¡ŒæˆåŠŸ
 select last_name , job_id , salary as sal from employees;
 
--- 2.ÏÂÃæµÄÓï¾äÊÇ·ñ¿ÉÒÔÖ´ĞĞ³É¹¦
+-- 2.ä¸‹é¢çš„è¯­å¥æ˜¯å¦å¯ä»¥æ‰§è¡ŒæˆåŠŸ
 select  *  from employees;
 
--- 3.ÕÒ³öÏÂÃæÓï¾äÖĞµÄ´íÎó
+-- 3.æ‰¾å‡ºä¸‹é¢è¯­å¥ä¸­çš„é”™è¯¯
 select employee_id , last_name,salary * 12 as "ANNUAL  SALARY" from employees;
 
--- 4.ÏÔÊ¾±ídepartmentsµÄ½á¹¹£¬²¢²éÑ¯ÆäÖĞµÄÈ«²¿Êı¾İ
+-- 4.æ˜¾ç¤ºè¡¨departmentsçš„ç»“æ„ï¼Œå¹¶æŸ¥è¯¢å…¶ä¸­çš„å…¨éƒ¨æ•°æ®
 
 DESC departments;
 select * from `departments`;
 
--- 5.ÏÔÊ¾³ö±íemployeesÖĞµÄÈ«²¿job_id£¨²»ÄÜÖØ¸´£©
+-- 5.æ˜¾ç¤ºå‡ºè¡¨employeesä¸­çš„å…¨éƒ¨job_idï¼ˆä¸èƒ½é‡å¤ï¼‰
 select distinct job_id from employees;
 
--- 6.ÏÔÊ¾³ö±íemployeesµÄÈ«²¿ÁĞ£¬¸÷¸öÁĞÖ®¼äÓÃ¶ººÅÁ¬½Ó£¬ÁĞÍ·ÏÔÊ¾³ÉOUT_PUT
+-- 6.æ˜¾ç¤ºå‡ºè¡¨employeesçš„å…¨éƒ¨åˆ—ï¼Œå„ä¸ªåˆ—ä¹‹é—´ç”¨é€—å·è¿æ¥ï¼Œåˆ—å¤´æ˜¾ç¤ºæˆOUT_PUT
 
-select IFNULL(commission_pct,0) as ½±½ğÂÊ,commission_pct from employees;
+select IFNULL(commission_pct,0) as å¥–é‡‘ç‡,commission_pct from employees;
 -- -------------------------------------------
 select concat(`first_name`,',',`last_name`,',',`job_id`,',',IFNULL(commission_pct,0)) AS out_put FROM employees;
 

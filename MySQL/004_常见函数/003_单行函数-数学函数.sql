@@ -1,23 +1,23 @@
--- round ËÄÉáÎåÈë
+-- round å››èˆäº”å…¥
 
--- ºóÃæÎÞ²ÎÊý,ÔòÖ±½ÓËÄÉáÎåÈëÈ¡Õû
+-- åŽé¢æ— å‚æ•°,åˆ™ç›´æŽ¥å››èˆäº”å…¥å–æ•´
 select round(-1.55);
--- ºóÃæÓÐ²ÎÊý,¶àÉÙÎ»ËÄÉáÎåÈë¶àÉÙÎ»
+-- åŽé¢æœ‰å‚æ•°,å¤šå°‘ä½å››èˆäº”å…¥å¤šå°‘ä½
 select round(1.567,2);
 
--- ceil ÏòÉÏÈ¡Õû,·µ»Ø>=¸Ã²ÎÊýµÄ×îÐ¡ÕûÊý
+-- ceil å‘ä¸Šå–æ•´,è¿”å›ž>=è¯¥å‚æ•°çš„æœ€å°æ•´æ•°
 select ceil(-1.02);
 
--- floor ÏòÏÂÈ¡Õû£¬·µ»Ø<=¸Ã²ÎÊýµÄ×î´óÕûÊý
+-- floor å‘ä¸‹å–æ•´ï¼Œè¿”å›ž<=è¯¥å‚æ•°çš„æœ€å¤§æ•´æ•°
 select floor(-9.99);
 
--- truncate ½Ø¶Ï(½Ø¶ÏÐ¡ÊýµãºóµÄµÚ¼¸Î»)
+-- truncate æˆªæ–­(æˆªæ–­å°æ•°ç‚¹åŽçš„ç¬¬å‡ ä½)
 select truncate(1.69999,1);
 
--- modÈ¡Óà
+-- modå–ä½™
 /*
-mod(a,b) £º  a-a/b*b
-mod(-10,-3):-10- (-10)/(-3)*£¨-3£©=-1
+mod(a,b) ï¼š  a-a/b*b
+mod(-10,-3):-10- (-10)/(-3)*ï¼ˆ-3ï¼‰=-1
 */
 select mod(10,-3);
 select 10%3;

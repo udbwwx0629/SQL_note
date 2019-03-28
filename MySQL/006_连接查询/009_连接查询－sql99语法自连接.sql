@@ -1,4 +1,4 @@
--- ²éÑ¯Ô±¹¤µÄÃû×Ö£¬ÉÏ¼¶µÄÃû×Ö
+-- æŸ¥è¯¢å‘˜å·¥çš„åå­—ï¼Œä¸Šçº§çš„åå­—
 select e.last_name, m.last_name  from employees e  join employees m on e.manager_id=m.employee_id;
--- ²éÑ¯ĞÕÃûÖĞ°üº¬×Ö·ûkµÄÔ±¹¤µÄÃû×Ö£¬ÉÏ¼¶µÄÃû×Ö
+-- æŸ¥è¯¢å§“åä¸­åŒ…å«å­—ç¬¦kçš„å‘˜å·¥çš„åå­—ï¼Œä¸Šçº§çš„åå­—
 select  e.last_name,m.last_name from employees e join employees m on e.manager_id = m.employee_id where e.last_name like '%k%';

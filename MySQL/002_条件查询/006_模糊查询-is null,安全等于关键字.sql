@@ -1,23 +1,23 @@
--- 4¡¢is null
+-- 4ã€is null
 /*
-=»ò<>²»ÄÜÓÃÓÚÅÐ¶ÏnullÖµ
-is null»òis not null ¿ÉÒÔÅÐ¶ÏnullÖµ
+=æˆ–<>ä¸èƒ½ç”¨äºŽåˆ¤æ–­nullå€¼
+is nullæˆ–is not null å¯ä»¥åˆ¤æ–­nullå€¼
 */
 
--- °¸Àý1£º²éÑ¯Ã»ÓÐ½±½ðµÄÔ±¹¤ÃûºÍ½±½ðÂÊ
+-- æ¡ˆä¾‹1ï¼šæŸ¥è¯¢æ²¡æœ‰å¥–é‡‘çš„å‘˜å·¥åå’Œå¥–é‡‘çŽ‡
 select last_name,commission_pct from employees where commission_pct is null;
--- °¸Àý2£º²éÑ¯ÓÐ½±½ðµÄÔ±¹¤ÃûºÍ½±½ðÂÊ
+-- æ¡ˆä¾‹2ï¼šæŸ¥è¯¢æœ‰å¥–é‡‘çš„å‘˜å·¥åå’Œå¥–é‡‘çŽ‡
 select last_name,commission_pct from employees where commission_pct is not null;
--- °¸Àý3£º²éÑ¯¹¤×ÊÎª12000µÄÔ±¹¤ÃûºÍ½±½ðÂÊ(Ö»²éÑ¯µ½¹¤×ÊÔÚ12000µÄlast_name,commission_pct£¬½±½ðÂÊ°üº¬ÁËnullÖµ)
+-- æ¡ˆä¾‹3ï¼šæŸ¥è¯¢å·¥èµ„ä¸º12000çš„å‘˜å·¥åå’Œå¥–é‡‘çŽ‡(åªæŸ¥è¯¢åˆ°å·¥èµ„åœ¨12000çš„last_name,commission_pctï¼Œå¥–é‡‘çŽ‡åŒ…å«äº†nullå€¼)
 select last_name,commission_pct from employees where salary=12000;
 
--- 5.°²È«µÈÓÚ  <=>
--- °¸Àý1£º²éÑ¯Ã»ÓÐ½±½ðµÄÔ±¹¤ÃûºÍ½±½ðÂÊ(<=>¿É¶ÁÐÔ²»¸ß)
+-- 5.å®‰å…¨ç­‰äºŽ  <=>
+-- æ¡ˆä¾‹1ï¼šæŸ¥è¯¢æ²¡æœ‰å¥–é‡‘çš„å‘˜å·¥åå’Œå¥–é‡‘çŽ‡(<=>å¯è¯»æ€§ä¸é«˜)
 select last_name,commission_pct from employees where commission_pct <=> NULL;
--- °¸Àý2£º²éÑ¯¹¤×ÊÎª12000µÄÔ±¹¤ÐÅÏ¢
+-- æ¡ˆä¾‹2ï¼šæŸ¥è¯¢å·¥èµ„ä¸º12000çš„å‘˜å·¥ä¿¡æ¯
 select last_name,salary from employees where salary <=>12000;
 
 -- 6.is null PK <=>
 
--- IS NULL:½ö½ö¿ÉÒÔÅÐ¶ÏNULLÖµ£¬¿É¶ÁÐÔ½Ï¸ß£¬½¨ÒéÊ¹ÓÃ
--- <=> :¼È¿ÉÒÔÅÐ¶ÏNULLÖµ£¬ÓÖ¿ÉÒÔÅÐ¶ÏÆÕÍ¨µÄÊýÖµ£¬¿É¶ÁÐÔ½ÏµÍ
+-- IS NULL:ä»…ä»…å¯ä»¥åˆ¤æ–­NULLå€¼ï¼Œå¯è¯»æ€§è¾ƒé«˜ï¼Œå»ºè®®ä½¿ç”¨
+-- <=> :æ—¢å¯ä»¥åˆ¤æ–­NULLå€¼ï¼Œåˆå¯ä»¥åˆ¤æ–­æ™®é€šçš„æ•°å€¼ï¼Œå¯è¯»æ€§è¾ƒä½Ž

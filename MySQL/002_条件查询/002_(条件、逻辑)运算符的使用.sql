@@ -1,16 +1,16 @@
--- Ò»¡¢°´Ìõ¼ş±í´ïÊ½É¸Ñ¡
+-- ä¸€ã€æŒ‰æ¡ä»¶è¡¨è¾¾å¼ç­›é€‰
 
-    -- °¸Àı1£º²éÑ¯¹¤×Ê>12000µÄÔ±¹¤ĞÅÏ¢
+    -- æ¡ˆä¾‹1ï¼šæŸ¥è¯¢å·¥èµ„>12000çš„å‘˜å·¥ä¿¡æ¯
     select  * from employees where salary>12000;
-    -- °¸Àı2£º²éÑ¯²¿ÃÅ±àºÅ²»µÈÓÚ90ºÅµÄÔ±¹¤ÃûºÍ²¿ÃÅ±àºÅ
+    -- æ¡ˆä¾‹2ï¼šæŸ¥è¯¢éƒ¨é—¨ç¼–å·ä¸ç­‰äº90å·çš„å‘˜å·¥åå’Œéƒ¨é—¨ç¼–å·
     select last_name,department_id from employees where department_id <>90;
 
--- ¶ş¡¢°´Âß¼­±í´ïÊ½É¸Ñ¡
-    -- °¸Àı1£º²éÑ¯¹¤×ÊÔÚ10000µ½20000Ö®¼äµÄÔ±¹¤Ãû¡¢¹¤×ÊÒÔ¼°½±½ğ
-    select concat(last_name,'+',first_name) ĞÕÃû,salary ¹¤×Ê,ifnull(commission_pct,0) ½±½ğÂÊ from employees where salary>=10000 and salary<=20000;
-    -- °¸Àı2£º²éÑ¯²¿ÃÅ±àºÅ²»ÊÇÔÚ90µ½110Ö®¼äµÄ£¬»òÕß¹¤×Ê¸ßÓÚ15000µÄÔ±¹¤ĞÅÏ¢
+-- äºŒã€æŒ‰é€»è¾‘è¡¨è¾¾å¼ç­›é€‰
+    -- æ¡ˆä¾‹1ï¼šæŸ¥è¯¢å·¥èµ„åœ¨10000åˆ°20000ä¹‹é—´çš„å‘˜å·¥åã€å·¥èµ„ä»¥åŠå¥–é‡‘
+    select concat(last_name,'+',first_name) å§“å,salary å·¥èµ„,ifnull(commission_pct,0) å¥–é‡‘ç‡ from employees where salary>=10000 and salary<=20000;
+    -- æ¡ˆä¾‹2ï¼šæŸ¥è¯¢éƒ¨é—¨ç¼–å·ä¸æ˜¯åœ¨90åˆ°110ä¹‹é—´çš„ï¼Œæˆ–è€…å·¥èµ„é«˜äº15000çš„å‘˜å·¥ä¿¡æ¯
 
--- µÚÒ»ÖÖĞ´·¨
+-- ç¬¬ä¸€ç§å†™æ³•
 select * from employees where department_id<90 or department_id>110 or salary>15000;
--- µÚ¶şÖÖĞ´·¨
+-- ç¬¬äºŒç§å†™æ³•
 select * from employees where not(department_id>=90 and department_id<=110) or salary>15000;
